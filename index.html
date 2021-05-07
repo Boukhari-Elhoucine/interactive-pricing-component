@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Manrope" />
+    <link rel="stylesheet" href="./dist/css/main.css" />
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <section class="main">
+      <div class="main__banner">
+        <div class="main__banner__text">
+          <img
+            class="main__banner__text__pattern"
+            src="./images/pattern-circles.svg"
+            alt=""
+          />
+          <h2>Simple, traffic based-pricing</h2>
+          <h4>Sign up for 30 days</h4>
+        </div>
+        <img
+          class="main__banner__background"
+          src="./images/bg-pattern.svg"
+          alt="background"
+        />
+      </div>
+      <div class="main__box">
+        <div class="main__box__up">
+          <div class="main__box__up__one">
+            <p><span id="view">100K</span>pageviews</p>
+            <p><span class="main__box__up__value"></span>/month</p>
+          </div>
+          <div class="main__box__up__slider">
+            <input
+              id="slider"
+              type="range"
+              min="0"
+              max="4"
+              value="0"
+              step="1"
+            />
+          </div>
+          <div class="main__box__up__check">
+            <label class="main__box__up__check__label">
+              Monthly Billing
+              <input type="checkbox" />
+              Yearly Billing
+            </label>
+            <span id="discount">25% discount</span>
+          </div>
+        </div>
+        <div class="main__box__down">
+          <ul class="main__box__down__text">
+            <li>
+              <img src="./images/icon-check.svg" alt="" />
+              <span>Unlimited websites</span>
+            </li>
+            <li>
+              <img src="./images/icon-check.svg" alt="" />
+              <span>100% data ownership</span>
+            </li>
+            <li>
+              <img src="./images/icon-check.svg" alt="" />
+              <span>Email reports</span>
+            </li>
+          </ul>
+          <button>Start my trial</button>
+        </div>
+      </div>
+    </section>
+    <script src="./main.js"></script>
+  </body>
+</html>

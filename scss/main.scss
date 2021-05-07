@@ -1,0 +1,192 @@
+$soft-cyan: hsl(174, 77%, 80%);
+$Strong-Cyan: hsl(174, 86%, 45%);
+$Light-Grayish-Red: hsl(14, 92%, 95%);
+$Light-Red: hsl(15, 100%, 70%);
+$Pale-Blue: hsl(226, 100%, 87%);
+$Dark-Desaturated-Blue: hsl(227, 35%, 25%);
+$Very-Pale-Blue: hsl(230, 100%, 99%);
+$white: hsl(0, 0%, 100%);
+$Light-Grayish-Blue: hsl(224, 65%, 95%);
+$Grayish-Blue: hsl(225, 20%, 60%);
+$light: 600;
+$bold: 800;
+$space: 2rem;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Manrope", sans-serif;
+}
+.main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  &__banner {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5rem;
+    &__text {
+      color: $Dark-Desaturated-Blue;
+      position: relative;
+      &__pattern {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+  &__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 5px #111;
+    background: $white;
+    border-radius: 0.7rem;
+    min-width: 35vw;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+
+    &__up {
+      flex: 2;
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+      &__one {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem $space;
+      }
+      p {
+        color: $Grayish-Blue;
+      }
+      &__slider {
+        padding: 0 $space;
+        position: relative;
+      }
+      &__check {
+        padding: $space;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 15px;
+        align-items: center;
+        &__label {
+          margin-right: 1rem;
+          display: flex;
+          align-items: center;
+          input[type="checkbox"] {
+            height: 20px;
+            width: 40px;
+            margin: 0 0.5rem;
+            appearance: none;
+            background: $Light-Grayish-Blue;
+            outline: none;
+            border-radius: 1rem;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            &:checked {
+              background: $Strong-Cyan;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              width: 14px;
+              height: 14px;
+              border-radius: 7px;
+              margin-left: 2px;
+              background: #fff;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+              transition: 0.5s;
+            }
+            &:checked:before {
+              left: 50%;
+            }
+          }
+        }
+      }
+    }
+    &__down {
+      flex: 1;
+      display: flex;
+      padding: $space;
+      align-items: center;
+      justify-content: space-between;
+      &__text {
+        list-style: none;
+        li {
+          color: $Grayish-Blue;
+          padding: 0.3rem 0;
+          span {
+            margin-left: 1rem;
+          }
+        }
+      }
+      button {
+        background-color: $Dark-Desaturated-Blue;
+        border: none;
+        padding: 0.5rem 2rem;
+        border-radius: 1rem;
+        color: $Pale-Blue;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.main__box__up__value {
+  color: $Dark-Desaturated-Blue;
+  font-size: 2em;
+}
+#slider {
+  appearance: none;
+  width: 100%;
+  height: 7px;
+  outline: none;
+
+  background: linear-gradient(90deg, $Strong-Cyan 0%, $soft-cyan 0%);
+  border-radius: 3px;
+  opacity: 0.7;
+  transition: opacity 500ms ease;
+  &:hover {
+    opacity: 1;
+  }
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: $Strong-Cyan;
+    border-radius: 50%;
+  }
+}
+#discount {
+  background-color: $Light-Grayish-Red;
+  display: inline-block;
+  color: $Light-Red;
+  font-weight: $light;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+}
+
+@mixin mobile {
+  @media screen and (max-width: 375px) {
+  }
+}
