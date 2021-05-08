@@ -5,8 +5,10 @@ const view = document.getElementById("view");
 const views = ["10k", "50k", "100k", "500k", "1M"];
 const values = [8, 12, 16, 24, 36];
 output.innerHTML = `\$${values[slider.value]}`;
+view.innerText = views[slider.value];
 slider.oninput = function () {
   let number = values[this.value];
+  view.innerText = views[this.value];
   if (cb.checked) {
     output.innerHTML = `\$${number * 0.25}`;
   } else {
